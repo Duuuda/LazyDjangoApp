@@ -6,6 +6,8 @@ from os.path import isdir, exists
 class Command(BaseCommand):
     help = 'This command delete all migrations files in "<App>/migrations"'
 
+    # DANGEROUS ZONE
+    # Deletes all migration files in your project!!!
     def handle(self, *args, **options):
         for app_dir in listdir('.'):
             if isdir(app_dir) and exists(f'{app_dir}/migrations'):
