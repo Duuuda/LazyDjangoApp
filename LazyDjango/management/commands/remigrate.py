@@ -5,6 +5,7 @@ from os import system
 class Command(BaseCommand):
     help = 'This command will delete all migrations files and create new ones'
 
+    # Re-migrates and applies migrations to your project
     def handle(self, *args, **options):
         system('python manage.py removeoldmigrations')
         system('python manage.py makemigrations')
